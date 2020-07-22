@@ -40,6 +40,8 @@ Value = [ '%1.f' % elem for elem in Value ] # rounds numbers to one decimal plac
 df = pd.DataFrame(OrderedDict({'Zip Code' : zip_code,'Home Address': Address,'Price':raw_price, 'Beds': Beds,
                                'Baths':Baths, 'Area':raw_area , 'Price/sqft': Value }))
 df['Price/sqft'] = df['Price/sqft'].astype('int')
+
+# Adds the current Date and Time Column for Tracking purposes
 current_date = datetime.date(datetime.now())
 df['Name'] = current_date
 df.to_csv('HousingData.csv',index = False)
