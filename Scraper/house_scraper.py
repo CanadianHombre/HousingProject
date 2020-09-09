@@ -54,7 +54,7 @@ def main():
     data = []
     data.extend(main_scraper(query))
     df = pd.DataFrame(data)
-    df['date_scraped'] = dt.date.today()
+    df['date_scraped'] = dt.date.today().strftime('%Y-%m-%d')
     df.to_csv('HousingData.csv', index=False)
 
 
